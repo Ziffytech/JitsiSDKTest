@@ -43,4 +43,5 @@ dependencies {
 
     // Jitsi Meet
     implementation ('org.jitsi.react:jitsi-meet-sdk:2.8.2') { transitive = true }
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

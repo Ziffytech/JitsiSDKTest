@@ -1,9 +1,10 @@
 package net.jitsi.sdktest;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.jitsi.meet.sdk.JitsiMeet;
 import org.jitsi.meet.sdk.JitsiMeetActivity;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // Initialize default options for Jitsi Meet conferences.
         URL serverURL;
         try {
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException("Invalid server URL!");
         }
         JitsiMeetConferenceOptions defaultOptions
-            = new JitsiMeetConferenceOptions.Builder()
+                = new JitsiMeetConferenceOptions.Builder()
                 .setServerURL(serverURL)
                 .setWelcomePageEnabled(false)
                 .build();
@@ -43,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
             // Build options object for joining the conference. The SDK will merge the default
             // one we set earlier and this one when joining.
             JitsiMeetConferenceOptions options
-                = new JitsiMeetConferenceOptions.Builder()
+                    = new JitsiMeetConferenceOptions.Builder()
                     .setRoom(text)
+                    .setWelcomePageEnabled(true)
                     .build();
             // Launch the new activity with the given options. The launch() method takes care
             // of creating the required Intent and passing the options.
